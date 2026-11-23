@@ -39,49 +39,39 @@ export default function CuratedPrintsCatalog({ catalogItems, onAddToCart }) {
   };
 
   return (
-    <section id="archival-objects" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto hairline-t">
+    <div className="w-full">
       {/* Toast Notice */}
       {addedItemNotice && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#121212] text-[#F6F5F1] px-5 py-3 hairline-border shadow-2xl flex items-center gap-3 font-mono text-xs">
-          <Check className="w-4 h-4 text-[#E63920]" />
+        <div className="fixed bottom-6 right-6 z-50 bg-[#111111] text-[#F4F1EA] px-5 py-3 border border-[#111111] shadow-2xl flex items-center gap-3 font-mono text-xs">
+          <Check className="w-4 h-4 text-[#D9251D]" />
           <span>Specimen <strong>{addedItemNotice}</strong> added to commission queue.</span>
         </div>
       )}
 
-      {/* Gallery Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-        <div>
-          <span className="text-[10px] font-mono uppercase tracking-widest text-[#E63920] block mb-2">
-            Series 01 // Curated Output
-          </span>
-          <h2 className="font-syne font-extrabold text-3xl md:text-5xl text-[#121212] tracking-tight">
-            Archival Objects & Calibrated Assemblies
-          </h2>
-          <p className="text-sm font-mono text-[#6E6B65] mt-2 max-w-xl">
-            Pre-sliced, verified geometries engineered for high-speed Bambu Lab A1 resonance damping and multi-channel extrusion. Ready for express courier across Bangalore and Pan-India.
-          </p>
-        </div>
-
-        {/* Filter Tabs */}
-        <div className="flex items-center gap-2 border-b hairline-border pb-1">
+      {/* Filter Tabs Bar */}
+      <div className="flex items-center justify-between border-b border-[#111111] pb-4 mb-8">
+        <div className="flex items-center gap-2">
           {[
-            { id: 'all', label: 'All Series' },
+            { id: 'all', label: 'All Curated Prints' },
             { id: 'd2c', label: 'Sculptural & Art' },
             { id: 'b2b', label: 'B2B Technical' },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveFilter(tab.id)}
-              className={`px-3 py-1.5 text-xs font-mono uppercase tracking-wider transition-colors ${
+              className={`px-4 py-2 text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer ${
                 activeFilter === tab.id
-                  ? 'border-b-2 border-[#121212] text-[#121212] font-semibold'
-                  : 'text-[#6E6B65] hover:text-[#121212]'
+                  ? 'bg-[#111111] text-[#F4F1EA] font-bold'
+                  : 'bg-[#FAF8F3] text-[#111111] border border-[#111111]/30 hover:border-[#111111]'
               }`}
             >
               {tab.label}
             </button>
           ))}
         </div>
+        <span className="hidden sm:inline-block text-[11px] font-mono text-[#6B6862] uppercase tracking-wider">
+          {filteredItems.length} Verified Models Available
+        </span>
       </div>
 
       {/* Grid of Objects */}
@@ -89,11 +79,11 @@ export default function CuratedPrintsCatalog({ catalogItems, onAddToCart }) {
         {filteredItems.map((item) => (
           <div
             key={item.id}
-            className="gallery-card bg-[#FAF9F5] hairline-border flex flex-col justify-between group"
+            className="bg-[#FAF8F3] border border-[#111111] flex flex-col justify-between group hover:border-[#D9251D] transition-colors"
           >
             <div>
               {/* Image Frame */}
-              <div className="relative h-72 w-full overflow-hidden bg-[#EFECE4]">
+              <div className="relative h-72 w-full overflow-hidden bg-[#EFECE4] border-b border-[#111111]">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -101,45 +91,45 @@ export default function CuratedPrintsCatalog({ catalogItems, onAddToCart }) {
                 />
 
                 {/* Archival Code Tag */}
-                <div className="absolute top-4 left-4 bg-[#F6F5F1] px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-[#121212] hairline-border">
+                <div className="absolute top-4 left-4 bg-[#FAF8F3] px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-[#111111] border border-[#111111]">
                   {item.code}
                 </div>
 
                 {/* Edition Pill */}
-                <div className="absolute top-4 right-4 bg-[#121212]/80 backdrop-blur-md px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-[#F6F5F1]">
+                <div className="absolute top-4 right-4 bg-[#111111]/90 text-[#F4F1EA] backdrop-blur-md px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider">
                   {item.edition}
                 </div>
 
                 {/* Floating Specs Bar */}
-                <div className="absolute bottom-3 left-4 right-4 bg-[#F6F5F1]/95 backdrop-blur-md p-2 hairline-border flex items-center justify-between text-[10px] font-mono text-[#6E6B65]">
+                <div className="absolute bottom-3 left-4 right-4 bg-[#FAF8F3]/95 backdrop-blur-md p-2 border border-[#111111] flex items-center justify-between text-[10px] font-mono text-[#6B6862]">
                   <span className="flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-[#E63920]" /> {item.printTime}
+                    <Clock className="w-3 h-3 text-[#D9251D]" /> {item.printTime}
                   </span>
                   <span>{item.weight}</span>
-                  <span className="text-[#121212]">{item.dimensions}</span>
+                  <span className="text-[#111111] font-semibold">{item.dimensions}</span>
                 </div>
               </div>
 
               {/* Text Description */}
               <div className="p-6">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#E63920] block mb-1">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#D9251D] block mb-1">
                   {item.series}
                 </span>
-                <h3 className="font-syne font-bold text-xl text-[#121212] tracking-tight group-hover:text-[#E63920] transition-colors">
+                <h3 className="font-bebas text-3xl text-[#111111] tracking-wide group-hover:text-[#D9251D] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs text-[#6E6B65] mt-3 leading-relaxed">
+                <p className="text-xs font-mono text-[#6B6862] mt-2 leading-relaxed">
                   {item.description}
                 </p>
 
                 {/* Material Pill */}
-                <div className="mt-4 pt-3 hairline-t flex items-center justify-between text-[11px] font-mono text-[#121212]">
-                  <span className="text-[#6E6B65]">Specification:</span>
+                <div className="mt-4 pt-3 border-t border-[#111111]/15 flex items-center justify-between text-[11px] font-mono text-[#111111]">
+                  <span className="text-[#6B6862]">Material:</span>
                   <span className="font-semibold">{item.material}</span>
                 </div>
 
                 {item.volumeDiscount && (
-                  <div className="mt-2 text-[10px] font-mono text-[#E63920]">
+                  <div className="mt-2 text-[10px] font-mono text-[#D9251D]">
                     ↳ {item.volumeDiscount}
                   </div>
                 )}
@@ -147,25 +137,25 @@ export default function CuratedPrintsCatalog({ catalogItems, onAddToCart }) {
             </div>
 
             {/* Price & Acquisition Bar */}
-            <div className="p-6 pt-0 flex items-center justify-between">
+            <div className="p-6 pt-0 flex items-center justify-between border-t border-[#111111]/10 mt-2">
               <div>
-                <span className="text-[9px] font-mono uppercase tracking-widest text-[#6E6B65] block">Valuation</span>
-                <span className="font-syne font-black text-2xl text-[#121212]">
+                <span className="text-[9px] font-mono uppercase tracking-widest text-[#6B6862] block">Price</span>
+                <span className="font-bebas text-3xl text-[#111111]">
                   ₹{item.price.toLocaleString('en-IN')}
                 </span>
               </div>
 
               <button
                 onClick={() => handleQuickAdd(item)}
-                className="px-4 py-2.5 bg-[#121212] text-[#F6F5F1] hover:bg-[#E63920] font-mono uppercase tracking-wider text-[11px] flex items-center gap-2 transition-colors cursor-pointer"
+                className="px-4 py-2.5 bg-[#111111] text-[#F4F1EA] hover:bg-[#D9251D] font-mono uppercase tracking-wider text-[11px] flex items-center gap-2 transition-colors cursor-pointer"
               >
-                <span>Acquire</span>
+                <span>Add to Order</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

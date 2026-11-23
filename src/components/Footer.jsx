@@ -1,14 +1,15 @@
 import React from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
-export default function Footer({ onOpenAdmin }) {
+export default function Footer() {
   return (
     <footer className="bg-[#EFECE4] hairline-t text-[#111111] py-20 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
         {/* Monogram Col */}
         <div className="lg:col-span-2 space-y-4">
-          <div className="font-bebas text-4xl tracking-wide text-[#111111]">
-            LAYERFORGE<span className="text-[#D9251D]">.</span>
+          <div className="font-bebas text-4xl tracking-wide text-[#111111] flex items-center">
+            plyon labs
+            <span className="inline-block w-3 h-3 rounded-full bg-[#FF2D78] ml-1.5 shadow-[0_0_8px_rgba(255,45,120,0.6)]"></span>
           </div>
           <p className="text-xs font-mono text-[#6B6862] leading-relaxed max-w-sm">
             Haute additive fabrication atelier based in Bengaluru, Karnataka. Operating calibrated Bambu Lab A1 hardware for precision engineering prototypes and bespoke 3D prints.
@@ -30,30 +31,22 @@ export default function Footer({ onOpenAdmin }) {
             Navigation
           </h4>
           <ul className="space-y-2.5 text-xs font-mono text-[#111111]/80">
-            <li><a href="#upload-section" className="hover:text-[#D9251D] transition-colors">01 // Upload STL File</a></li>
-            <li><a href="#catalog-section" className="hover:text-[#D9251D] transition-colors">02 // Browse Catalog</a></li>
+            <li><a href="#catalog-section" className="hover:text-[#D9251D] transition-colors">01 // Browse Catalog</a></li>
+            <li><a href="#upload-section" className="hover:text-[#D9251D] transition-colors">02 // Upload STL File</a></li>
             <li><a href="#dual-atelier" className="hover:text-[#D9251D] transition-colors">03 // B2B Hardware</a></li>
-            <li>
-              <button 
-                onClick={onOpenAdmin}
-                className="hover:text-[#D9251D] transition-colors text-left flex items-center gap-1 cursor-pointer font-bold text-[#111111]"
-              >
-                ⚙️ Owner Admin Panel
-              </button>
-            </li>
           </ul>
         </div>
 
-        {/* Alloys */}
+        {/* Alloys - No per gram info */}
         <div>
           <h4 className="text-[10px] font-mono uppercase tracking-widest text-[#E63920] mb-4">
-            Material Alloys (₹/g)
+            Material Specifications
           </h4>
           <ul className="space-y-2.5 text-xs font-mono text-[#121212]/80">
-            <li>Architectural Matte PLA (₹10/g)</li>
-            <li>Prismatic Silk Dual-Tone (₹14/g)</li>
-            <li>Structural PETG (75°C Heat) (₹13/g)</li>
-            <li>Vulcanized Elastomer TPU 95A (₹18/g)</li>
+            <li>Architectural Matte PLA</li>
+            <li>Prismatic Silk Dual-Tone</li>
+            <li>Structural PETG (75°C Heat)</li>
+            <li>Vulcanized Elastomer TPU 95A</li>
             <li>4-Channel Multi-Material AMS</li>
           </ul>
         </div>
@@ -73,7 +66,7 @@ export default function Footer({ onOpenAdmin }) {
       </div>
 
       <div className="max-w-7xl mx-auto mt-16 pt-8 hairline-t flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-[#6E6B65] gap-4">
-        <span>© 2026 LAYERFORGE ATELIER BANGALORE. ALL SPECIMENS CALIBRATED.</span>
+        <span>© 2026 plyon labs. ALL SPECIMENS CALIBRATED.</span>
         <span>PROUDLY FABRICATING IN BENGALURU, INDIA 🇮🇳</span>
       </div>
     </footer>

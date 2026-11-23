@@ -56,7 +56,7 @@ export default function B2BvsD2CSplit() {
               Circumvent 3-Week Tooling Lead Times. Validate Physical Hardware in Bangalore Tomorrow.
             </h3>
             <p className="text-sm font-mono text-[#6E6B65] leading-relaxed">
-              Traditional injection molding requires ₹3L+ tooling and multi-week overseas freight. LayerForge operates a calibrated Bambu Lab A1 fleet in Bangalore delivering ±0.15mm dimensional verification, functional heat resistance up to 75°C, and small-batch pilot runs with zero tooling commitments.
+              Traditional injection molding requires ₹3L+ tooling and multi-week overseas freight. plyon labs operates a calibrated Bambu Lab A1 fleet in Bangalore delivering ±0.15mm dimensional verification, functional heat resistance up to 75°C, and small-batch pilot runs with zero tooling commitments.
             </p>
 
             {/* Technical Commitments */}

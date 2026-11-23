@@ -16,14 +16,15 @@ export default function AcidPosterHero() {
               <RedSealCircle text="ARCHITECTURAL FORM // BLR" subtext="BAMBU A1" className="scale-110 sm:scale-125" />
             </div>
 
-            {/* Giant Title */}
+            {/* Giant Title: plyon labs with pink dot */}
             <div>
               <div className="flex items-center justify-between text-[11px] font-mono text-[#6B6862] uppercase tracking-widest mb-1">
                 <span>[ADDITIVE FABRICATION // ATELIER]</span>
                 <span className="crosshair-plus mr-12 sm:mr-24" />
               </div>
-              <h1 className="font-bebas text-7xl sm:text-9xl tracking-tight text-[#111111] leading-[0.88] select-none">
-                LAYERFORGE
+              <h1 className="font-bebas text-7xl sm:text-9xl tracking-tight text-[#111111] leading-[0.88] select-none flex items-baseline flex-wrap">
+                plyon labs
+                <span className="inline-block w-4 h-4 sm:w-7 sm:h-7 rounded-full bg-[#FF2D78] ml-2 sm:ml-4 self-center shadow-[0_0_14px_rgba(255,45,120,0.6)]"></span>
               </h1>
             </div>
 
@@ -107,43 +108,43 @@ export default function AcidPosterHero() {
           </div>
         </div>
 
-        {/* TWO PRIMARY ACTION SECTIONS CALLOUT CARDS */}
+        {/* TWO PRIMARY ACTION SECTIONS CALLOUT CARDS (CATALOG FIRST, UPLOAD SECOND) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          {/* Card 1: Upload STL */}
+          {/* Card 1: Browse Catalog */}
           <a
-            href="#upload-section"
+            href="#catalog-section"
             className="p-6 border-2 border-[#111111] bg-[#111111] text-[#F4F1EA] hover:bg-[#D9251D] hover:border-[#D9251D] transition-colors flex items-center justify-between group"
           >
             <div>
               <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#D9251D] group-hover:text-white">
-                <Upload className="w-3.5 h-3.5" />
-                <span>SECTION 01</span>
-              </div>
-              <h3 className="font-bebas text-3xl sm:text-4xl tracking-wide mt-1">
-                UPLOAD AN STL FILE
-              </h3>
-              <p className="text-xs font-mono opacity-80 mt-1">
-                Instant real-time slicing calculation, material pricing in ₹, and 24h dispatch.
-              </p>
-            </div>
-            <ArrowRight className="w-6 h-6 shrink-0 group-hover:translate-x-2 transition-transform" />
-          </a>
-
-          {/* Card 2: Browse Catalog */}
-          <a
-            href="#catalog-section"
-            className="p-6 border-2 border-[#111111] bg-[#F4F1EA] text-[#111111] hover:bg-[#111111] hover:text-[#F4F1EA] transition-colors flex items-center justify-between group"
-          >
-            <div>
-              <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#D9251D]">
                 <ShoppingBag className="w-3.5 h-3.5" />
-                <span>SECTION 02</span>
+                <span>SECTION 01</span>
               </div>
               <h3 className="font-bebas text-3xl sm:text-4xl tracking-wide mt-1">
                 BROWSE CATALOG
               </h3>
               <p className="text-xs font-mono opacity-80 mt-1">
                 Curated, verified 3D prints (kinetic sculptures, dragons, tech enclosures).
+              </p>
+            </div>
+            <ArrowRight className="w-6 h-6 shrink-0 group-hover:translate-x-2 transition-transform" />
+          </a>
+
+          {/* Card 2: Upload STL */}
+          <a
+            href="#upload-section"
+            className="p-6 border-2 border-[#111111] bg-[#F4F1EA] text-[#111111] hover:bg-[#111111] hover:text-[#F4F1EA] transition-colors flex items-center justify-between group"
+          >
+            <div>
+              <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#D9251D]">
+                <Upload className="w-3.5 h-3.5" />
+                <span>SECTION 02</span>
+              </div>
+              <h3 className="font-bebas text-3xl sm:text-4xl tracking-wide mt-1">
+                UPLOAD AN STL FILE
+              </h3>
+              <p className="text-xs font-mono opacity-80 mt-1">
+                Instant CAD quotation, Bambu Lab A1 calibrated slicing, and 24h dispatch.
               </p>
             </div>
             <ArrowDownRight className="w-6 h-6 shrink-0 group-hover:translate-y-1 group-hover:translate-x-1 transition-transform" />

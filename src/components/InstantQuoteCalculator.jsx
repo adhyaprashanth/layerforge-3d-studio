@@ -127,7 +127,7 @@ export default function InstantQuoteCalculator({
         <div className="mt-6">
           <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-wider text-[#6E6B65] mb-2">
             <span>02 / Material Alloy</span>
-            <span>₹{selectedMaterial.basePricePerGram}/g</span>
+            <span className="text-[#121212] font-semibold">{selectedMaterial.name}</span>
           </div>
 
           <div className="grid grid-cols-2 gap-2">
@@ -148,7 +148,7 @@ export default function InstantQuoteCalculator({
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-mono uppercase tracking-wider opacity-60">{mat.code}</span>
-                    <span className="text-[10px] font-mono">₹{mat.basePricePerGram}/g</span>
+                    <span className="text-[10px] font-mono uppercase opacity-75">{mat.id.toUpperCase()}</span>
                   </div>
                   <h4 className="font-syne font-semibold text-xs mt-1 truncate">{mat.name}</h4>
                   <p className="text-[10px] font-mono opacity-60 mt-0.5 truncate">{mat.finish}</p>

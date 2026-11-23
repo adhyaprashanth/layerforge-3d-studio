@@ -93,8 +93,8 @@ export default function AdminPanel({
               A1
             </div>
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#D9251D] block">
-                [ATELIER MANAGEMENT // BENGALURU]
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#FF2D78] block">
+                [plyon labs • ATELIER MANAGEMENT // BENGALURU]
               </span>
               <h3 className="font-bebas text-2xl tracking-wide">
                 CATALOG & QUEUE ADMIN CONSOLE
